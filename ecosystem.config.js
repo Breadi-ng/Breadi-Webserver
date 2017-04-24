@@ -44,7 +44,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:verygreenboi/Breadi-Webserver.git",
       path : "/var/www/breadi.tk",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
       user : "node",
