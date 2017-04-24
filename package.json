@@ -10,12 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
+    "express-subdomain": "^1.0.5",
     "moment": "^2.18.1",
     "nodemailer": "^3.1.8",
+    "parse-dashboard": "^1.0.25",
     "parse-server": "^2.3.7",
     "path": "^0.12.7",
     "q": "^1.5.0",
-    "request": "^2.81.0",
-    "parse-dashboard": "^1.0.25"
+    "request": "^2.81.0"
   }
 }
