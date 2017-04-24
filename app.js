@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var moment = require('moment');
 
-var port = process.env.PORT || 3090;
+var port = process.env.PORT || 2090;
 
 var app = express();
 
@@ -53,32 +53,33 @@ var api = new ParseServer({
 
 app.use(bodyParser.json());
 
-var dashboard = new ParseDashboard({
-  "apps" : [
-    {
-      "serverURL": "http://localhost:3030/1",
-      "appId": "VMvhutWAGNpk78QXprTt",
-      "masterKey": "8zqndJmKVnQER6aXsnWR",
-      "appName": "Breadi local"
-    },
-    {
-      "serverURL": "https://api.breadi.tk/1",
-      "appId": "VMvhutWAGNpk78QXprTt",
-      "masterKey": "8zqndJmKVnQER6aXsnWR",
-      "appName": "Breadi.tk"
-    }
-  ],
-  "users" : [
-    {
-      "user":"pikin",
-      "pass":"admin2017"
-    }
-  ]
-});
+// var dashboard = new ParseDashboard({
+//   "apps" : [
+//     {
+//       "serverURL": "http://localhost:3030/1",
+//       "appId": "VMvhutWAGNpk78QXprTt",
+//       "masterKey": "8zqndJmKVnQER6aXsnWR",
+//       "appName": "Breadi local"
+//     },
+//     {
+//       "serverURL": "https://api.breadi.tk/1",
+//       "appId": "VMvhutWAGNpk78QXprTt",
+//       "masterKey": "8zqndJmKVnQER6aXsnWR",
+//       "appName": "Breadi.tk"
+//     }
+//   ],
+//   "users" : [
+//     {
+//       "user":"pikin",
+//       "pass":"admin2017"
+//     }
+//   ]
+// });
 
-app.use(subdomain('api',(mountPath, api)));
+var parseEnd = app.use(mountPath, api); 
 
-app.use(subdomain('admin', dashboard));
+app.use(subdomain('api', parseEnd));
 
+// app.use(subdomain('admin', dashboard));
 
 module.exports = app;
