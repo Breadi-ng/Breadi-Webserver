@@ -24,12 +24,6 @@ module.exports = {
         PUB_SERVER_URL:       "https://api.breadi.tk",
         PORT:                 "3030"
       }
-    },
-
-    // Second application
-    {
-      name      : "WEB",
-      script    : "web.js"
     }
   ],
 
