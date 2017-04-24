@@ -36,7 +36,7 @@ module.exports = {
       user : "root",
       host : "104.207.132.52",
       ref  : "origin/master",
-      repo : "git@github.com:verygreenboi/Breadi-Webserver.git",
+      repo : "git@github.com:Breadi-ng/Breadi-Webserver.git",
       path : "/var/www/breadi.tk",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
