@@ -53,33 +53,33 @@ var api = new ParseServer({
 
 app.use(bodyParser.json());
 
-// var dashboard = new ParseDashboard({
-//   "apps" : [
-//     {
-//       "serverURL": "http://localhost:3030/1",
-//       "appId": "VMvhutWAGNpk78QXprTt",
-//       "masterKey": "8zqndJmKVnQER6aXsnWR",
-//       "appName": "Breadi local"
-//     },
-//     {
-//       "serverURL": "https://api.breadi.tk/1",
-//       "appId": "VMvhutWAGNpk78QXprTt",
-//       "masterKey": "8zqndJmKVnQER6aXsnWR",
-//       "appName": "Breadi.tk"
-//     }
-//   ],
-//   "users" : [
-//     {
-//       "user":"pikin",
-//       "pass":"admin2017"
-//     }
-//   ]
-// });
+var dashboard = new ParseDashboard({
+  "apps" : [
+    {
+      "serverURL": "http://localhost:3030/1",
+      "appId": "VMvhutWAGNpk78QXprTt",
+      "masterKey": "8zqndJmKVnQER6aXsnWR",
+      "appName": "Breadi local"
+    },
+    {
+      "serverURL": "https://api.breadi.tk/1",
+      "appId": "VMvhutWAGNpk78QXprTt",
+      "masterKey": "8zqndJmKVnQER6aXsnWR",
+      "appName": "Breadi.tk"
+    }
+  ],
+  "users" : [
+    {
+      "user":"mrsmith9ja",
+      "pass":"P@b0p0v!b"
+    }
+  ]
+});
 
 var parseEnd = app.use(mountPath, api); 
 
 app.use(subdomain('api', parseEnd));
 
-// app.use(subdomain('admin', dashboard));
+app.use('/d', dashboard);
 
 module.exports = app;
